@@ -44,7 +44,7 @@ public class UserController {
   User userExists = userService.findUserByEmail(user.getEmail());
   
   if(userExists != null) {
-   bindingResult.rejectValue("email", "error.user", "This email already exists!");
+   bindingResult.rejectValue("email", "error.user only", "This email already exists!");
   }
   if(bindingResult.hasErrors()) {
    model.setViewName("user/signup");
